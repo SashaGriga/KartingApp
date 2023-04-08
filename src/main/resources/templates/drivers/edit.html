@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать человека</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/drivers/{id}(id=${driver.getId()})}" th:object="${driver}">
+    <label for="nickname">Введите псевдоним: </label>
+    <input type="text" th:field="*{nickname}" id="nickname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">Full Name Error</div>
+    <br/>
+    <label for="nickname">Введите имя: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Full Name Error</div>
+    <br/>
+    <label for="nickname">Введите фамилию: </label>
+    <input type="text" th:field="*{surname}" id="nickname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Full Name Error</div>
+    <br/>
+    <label for="yearOfBirth">Введите год рождения: </label>
+    <input type="text" th:field="*{yearOfBirth}" id="yearOfBirth"/>
+    <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year of birth Error
+    </div>
+    <br/>
+    <input type="submit" value="Редактировать!"/>
+</form>
+
+</body>
+</html>
