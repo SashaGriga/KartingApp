@@ -1,1 +1,1 @@
-rootProject.name = "karting"
+rootProject.name = "KartingApp"
